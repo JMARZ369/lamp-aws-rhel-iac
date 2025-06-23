@@ -1,0 +1,12 @@
+---
+- name: Install MariaDB 10.5 server on Amazon Linux 2023
+  dnf:
+    name: mariadb105-server
+    state: present
+
+- name: Start and enable MariaDB service
+  systemd:
+    name: mariadb
+    state: started
+    enabled: true
+
